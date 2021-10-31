@@ -4,7 +4,7 @@ import java.util.Map;
 public class Board {
     Map<int[], Cell> mCells = new Hashtable<>();
 
-    public Board(/*int[] position, */) {
+    public Board(String[][] position) {
         final int boardSize = 8;
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
@@ -21,9 +21,9 @@ public class Board {
 //                TODO: придумать в каком виде передать распарсенные позиции в Board,
 //                 то есть распарсить их (с помощью регулярок)
 
-                final int[] position = {i, j};
+//                final int[] position = {i, j};
                 final Cell cell = new Cell(Cell.State.BLANK);
-                mCells.put(position, cell);
+//                mCells.put(position, cell);
             }
         }
     }
