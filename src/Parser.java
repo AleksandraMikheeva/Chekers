@@ -3,11 +3,6 @@ import java.util.ArrayList;
 public class Parser {
     public ArrayList<ArrayList<String>> initPosParsed;
 
-    //    public Parser(String white, String black) {
-////        initPosParsed = initial_position(white, black);
-////        Board fill_board= new Board(initPosParsed);
-//
-//    }
     public static ArrayList<ArrayList<String>> initialPosition(String white, String black) {
         ArrayList<ArrayList<String>> parsedInitPositions = new ArrayList<ArrayList<String>>();
 

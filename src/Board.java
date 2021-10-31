@@ -1,31 +1,34 @@
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.ArrayList;
+
+enum State {BLACK, WHITE, BLANK};
 
 public class Board {
-    Map<int[], Cell> mCells = new Hashtable<>();
 
-    public Board(String[][] position) {
+    public State state;
+    static State[][] board = new State[8][8];
+
+    public Board(ArrayList<ArrayList<String>> initialPositions) {
         final int boardSize = 8;
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
-//                Cell.State state = Cell.State.BLANK;
-
-                //Класс Board должен (?) принимать уже распарсенные позиции.
-
-                //Наверное, это будет двумерный массив из двух строк, где 1 строка - координаты белых,
-                //a 2 строка - координаты  черных(?).
-
-                //По умолчанию каждой позиции в цикле ставить BLANK, и только переданным в Board позициям
-                //ставить WHITE или BLACK в зависимости  от номера строки в переданном массиве (?).
-
-//                TODO: придумать в каком виде передать распарсенные позиции в Board,
-//                 то есть распарсить их (с помощью регулярок)
-
-//                final int[] position = {i, j};
-                final Cell cell = new Cell(Cell.State.BLANK);
-//                mCells.put(position, cell);
+                board[i][j] = state.BLANK;
             }
         }
+    }
+
+    static State[][] fillInitPositions(ArrayList<ArrayList<String>> initialPositions) {
+        State color = State.WHITE;
+        for (ArrayList pos : initialPositions) {
+            for (int i = 0; i < pos.size(); i++) {
+                int x = pos.get(i).toString().charAt(0) - 97;
+                int y = pos.get(i).toString().charAt(1) - 49;
+
+                board[x][y] = color;
+                System.out.println(board[x][y]);
+            }
+            color = State.BLACK;
+        }
+        return board;
     }
 
 }

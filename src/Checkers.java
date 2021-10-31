@@ -9,10 +9,12 @@ public class Checkers {
 
         ArrayList<ArrayList<String>> initialPositions;
         initialPositions = Parser.initialPosition(white, black);
-        for (int i = 0; i < initialPositions.size(); i++) {
-            System.out.print(initialPositions.get(i));
-        }
+//        for (int i = 0; i < initialPositions.size(); i++) {
+//            System.out.print(initialPositions.get(i));
+//        }
+        System.out.println('\n');
 
+        Board.fillInitPositions(initialPositions);
 //        Board board =
 //        System.out.println(Arrays.deepToString(initialPositions));
 //        String movements = in.black();
