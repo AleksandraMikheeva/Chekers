@@ -1,29 +1,28 @@
-//public class Cell {
-//    public enum State {BLACK, WHITE, BLANK}
-//
-//    //    private int[] mPosition;
-//    private State mState;
-//
-//    public Cell(/*int[] mPosition,*/ State mState) {
-////        this.mPosition = mPosition;
-//        this.mState = mState;
-//    }
-//
-////    public int[] getPosition() {
-////        return Arrays.copyOf(mPosition, mPosition.length);
-////    }
-//
-////    public void setPosition(int[] position) {
-////        mPosition = position;
-////    }
-//
-//    public State getState() {
-//        return mState;
-//    }
-//
-//    public void setState(State state) {
-//        mState = state;
-//    }
-//
-//
-//}
+enum State {BLACK, WHITE, BLANK};
+
+public class Cell {
+
+    private State state;
+    private boolean isKing;
+
+    public Cell(State state, boolean isKing) {
+        this.state = state;
+        this.isKing = isKing;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return this.state;
+    }
+
+    public void setIsKing(boolean isKing) {
+        this.isKing = isKing;
+    }
+
+    public boolean getIsKing() {
+        return this.isKing;
+    }
+}

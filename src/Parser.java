@@ -1,20 +1,18 @@
 import java.util.ArrayList;
 
 public class Parser {
-    public ArrayList<ArrayList<String>> initPosParsed;
-
-    public static ArrayList<ArrayList<String>> initialPosition(String white, String black) {
+    public ArrayList<ArrayList<String>> initialPosition(String white, String black) {
         ArrayList<ArrayList<String>> parsedInitPositions = new ArrayList<ArrayList<String>>();
 
-        ArrayList<String> whiteParsed = parse(white);
-        ArrayList<String> blackParsed = parse(black);
+        ArrayList<String> whiteParsed = parseInitPositions(white);
+        ArrayList<String> blackParsed = parseInitPositions(black);
 
         parsedInitPositions.add(whiteParsed);
         parsedInitPositions.add(blackParsed);
         return parsedInitPositions;
     }
 
-    private static ArrayList<String> parse(String str) {
+    private ArrayList<String> parseInitPositions(String str) {
         ArrayList<String> strParsed = new ArrayList<>();
         int i = 0;
         String coordinates = "";
@@ -34,4 +32,7 @@ public class Parser {
         }
         return strParsed;
     }
+//    public Movement[] parseMovements(String move) {
+//
+//    }
 }
