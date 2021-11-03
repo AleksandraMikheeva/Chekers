@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Checkers {
+public class RussianCheckers {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String white = in.nextLine();
@@ -14,10 +14,10 @@ public class Checkers {
 //            System.out.print(initialPositions.get(i));
 //        }
 //        System.out.println('\n');
-        State[][] boardFilled;
+//        State[][] boardFilled;
         Board board = new Board(initialPositions);
 
-        String move;
+//        String move;
 //        while ((move = in.next()) != null) {
 //            parser.parseMovements(move);
 //
