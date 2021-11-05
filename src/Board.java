@@ -21,26 +21,27 @@ public class Board {
     }
 
     private void fillInitPositions(@NotNull ArrayList<ArrayList<String>> initialPositions) {
-        int x;
-        int y;
+        int row;
+        int col;
         Color color = Color.WHITE;
         for (ArrayList pos : Collections.unmodifiableList(initialPositions)) {
             for (Object po : pos) {
-                y = po.toString().charAt(1) - 49;
+                row = po.toString().charAt(1) - 49; // row
                 if (po.toString().charAt(0) < 97) {
-                    x = po.toString().charAt(0) - 65;
-//                    board[x][y].setIsKing(true);
-                    board[x][y] = new King(x, y, color);
+                    col = po.toString().charAt(0) - 65;
+                    board[row][col] = new King(row, col, color);
                 } else {
-                    x = po.toString().charAt(0) - 97;
-                    board[x][y] = new Checker(x, y, color);
+                    col = po.toString().charAt(0) - 97;
+                    board[row][col] = new Checker(row, col, color);
                 }
-//                board[x][y].setState(color);
-                System.out.println(Arrays.toString(board[x][y].getCoordinates()));
-                System.out.println(board[x][y].getColor());
+                System.out.println(Arrays.toString(board[row][col].getCoordinates()));
+                System.out.println(board[row][col].getColor());
             }
             color = Color.BLACK;
         }
+//        board[][]
+        System.out.println("\nMoves:");
+        System.out.println(board[3][6].getMoves(board));
     }
 
 }

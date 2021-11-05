@@ -2,27 +2,33 @@ import java.util.ArrayList;
 
 public class Parser {
 
-    public Parser() {
+    private ArrayList<ArrayList<String>> initialPositions;
+
+    public Parser(String white, String black) {
+        setInitialPositions(white, black);
     }
 
-    public ArrayList<ArrayList<String>> initialPosition(String white, String black) {
-        ArrayList<ArrayList<String>> parsedInitPositions = new ArrayList<>();
-
-        ArrayList<String> whiteParsed = parseInitPositions(white);
-        ArrayList<String> blackParsed = parseInitPositions(black);
-
-        parsedInitPositions.add(whiteParsed);
-        parsedInitPositions.add(blackParsed);
-        return parsedInitPositions;
+    public ArrayList<ArrayList<String>> getInitialPositions() {
+        return initialPositions;
     }
 
-    private ArrayList<String> parseInitPositions(String str) {
+    private void setInitialPositions(String white, String black) {
+        initialPositions = new ArrayList<>();
+
+        ArrayList<String> whiteParsed = parseCoordinates(white);
+        ArrayList<String> blackParsed = parseCoordinates(black);
+
+        initialPositions.add(whiteParsed);
+        initialPositions.add(blackParsed);
+    }
+
+    public ArrayList<String> parseCoordinates(String str) {
         ArrayList<String> strParsed = new ArrayList<>();
         int i = 0;
         StringBuilder coordinates = new StringBuilder();
         final int strLen = str.length();
         while (i < strLen) {
-            if (str.charAt(i) == ' ') {
+            if (str.charAt(i) == ' ' || str.charAt(i) == '-' || str.charAt(i) == ':') {
                 strParsed.add(coordinates.toString());
                 coordinates = new StringBuilder();
                 i++;
@@ -36,7 +42,7 @@ public class Parser {
         }
         return strParsed;
     }
-//    public /*Movement[]*/ parseMovements(String move) {
+//    public /*move[]*/ parseMoves(String move) {
 //
 //    }
 }
