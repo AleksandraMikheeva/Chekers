@@ -24,6 +24,7 @@ public class RussianCheckers {
                 System.out.println(Arrays.toString(pos.getCoordinates()) + " " + pos.getColor());
             }
 //            System.out.println("moves: " + move.getMove());
+
             System.out.println("isCapture: " + move.getCapture());
             if (color != Color.BLACK) {
                 color = Color.BLACK;

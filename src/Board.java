@@ -7,6 +7,8 @@ import java.util.Collections;
 public class Board {
 
     private Checker[][] board;
+    private int row;
+    private int col;
 
     public Board(ArrayList<ArrayList<String>> initialPositions) {
         this.board = new Checker[8][8];
@@ -17,9 +19,16 @@ public class Board {
         return this.board;
     }
 
+    public void setBoard(Checker checker) {
+        int[] coordinates = checker.getCoordinates();
+        row = coordinates[0];
+        col = coordinates[1];
+        this.board[row][col] = checker;
+    }
+
     public void fillInitPositions(@NotNull ArrayList<ArrayList<String>> initialPositions) {
-        int row;
-        int col;
+//        int row;
+//        int col;
         Color color = Color.WHITE;
         for (ArrayList pos : Collections.unmodifiableList(initialPositions)) {
             for (Object po : pos) {

@@ -8,7 +8,7 @@ public class Checker {
     private int row;
     private int col;
     public ArrayList<ArrayList<Integer>> movesPossible = new ArrayList<>();
-    ;
+
 
     public Checker(int row, int col, Color color) {
         this.col = col;
