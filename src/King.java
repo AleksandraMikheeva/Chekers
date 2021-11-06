@@ -1,8 +1,8 @@
 public class King extends Checker {
 
 
-    public King(int x, int y, Color color) {
-        super(x, y, color);
+    public King(int row, int col, Color color) {
+        super(row, col, color);
     }
 
 //    @Override
