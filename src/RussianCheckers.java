@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RussianCheckers {
@@ -11,19 +11,27 @@ public class RussianCheckers {
         Board board = new Board(parser.getInitialPositions());
 
         final int operation = 2;
+        Move move;
+        Color color = Color.WHITE;
         while (in.hasNext()) {
-            String move = in.next();
-            ArrayList str = parser.parseCoordinates(move);
-
-            CheckMove checkMove = new CheckMove(parser.parseCoordinates(move));
-
-            if (move.charAt(operation) == ':') {
-
+            String str = in.next();
+            if (str.charAt(operation) == ':') {
+                move = new Move(parser.parseCoordinates(str), color, true);
+            } else {
+                move = new Move(parser.parseCoordinates(str), color, false);
             }
-            if (move.charAt(operation) == '-') {
-
+            for (Checker pos : move.getMove()) {
+                System.out.println(Arrays.toString(pos.getCoordinates()) + " " + pos.getColor());
+            }
+//            System.out.println("moves: " + move.getMove());
+            System.out.println("isCapture: " + move.getCapture());
+            if (color != Color.BLACK) {
+                color = Color.BLACK;
+            } else {
+                color = Color.WHITE;
             }
         }
+
 //        for (int i = 0; i < initialPositions.size(); i++) {
 //            System.out.print(initialPositions.get(i));
 //        }

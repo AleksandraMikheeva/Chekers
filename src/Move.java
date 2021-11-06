@@ -11,6 +11,14 @@ public class Move {
         fillMove(stringOfMoves, color);
     }
 
+    public ArrayList<Checker> getMove() {
+        return this.move;
+    }
+
+    public boolean getCapture() {
+        return this.isCapture;
+    }
+
     private void fillMove(@NotNull ArrayList<String> stringOfMoves, Color color) {
         int row;
         int col;

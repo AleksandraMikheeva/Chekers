@@ -1,6 +1,7 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Board {
@@ -30,8 +31,8 @@ public class Board {
                     col = po.toString().charAt(0) - 97;
                     board[row][col] = new Checker(row, col, color);
                 }
-//                System.out.println(Arrays.toString(board[row][col].getCoordinates()));
-//                System.out.println(board[row][col].getColor());
+                System.out.println(Arrays.toString(board[row][col].getCoordinates()));
+                System.out.println(board[row][col].getColor());
             }
             color = Color.BLACK;
         }
